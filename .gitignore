@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+build/
+
+# Testing output
+pytest_output*.txt
+
+# Ignore specific sensitive items and tests
+test_upload.xlsx

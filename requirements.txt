@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pymongo
+pandas
+openpyxl
+pydantic-settings
+python-dotenv
+openai
+apscheduler
+emails
+jinja2
+python-multipart
+aiosmtplib
+requests
+pytest
+httpx
