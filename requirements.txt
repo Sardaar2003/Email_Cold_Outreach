@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pymongo
+pymongo[srv]
 pandas
 openpyxl
 pydantic-settings
