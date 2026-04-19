@@ -156,11 +156,17 @@ async def get_campaign_status(db = Depends(get_db)):
         "last_email_sent_at": last_email_sent_at
     }
 
+from pydantic import BaseModel
+
+class ConfigInput(BaseModel):
+    key: str
+    value: str
+
 @app.post("/configure")
-async def configure(key: str, value: str, db = Depends(get_db)):
+async def configure(config: ConfigInput, db = Depends(get_db)):
     db.campaign_configs.update_one(
-        {"key": key},
-        {"$set": {"value": value, "key": key}},
+        {"key": config.key},
+        {"$set": {"value": config.value, "key": config.key}},
         upsert=True
     )
     return {"status": "Configuration updated"}

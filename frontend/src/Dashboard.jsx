@@ -176,7 +176,7 @@ const Dashboard = () => {
 
   const updateConfig = async (key, value) => {
     try {
-      await api.post(`/configure?key=${key}&value=${value}`);
+      await api.post(`/configure`, { key: key.toString(), value: value.toString() });
       alert("Configuration updated");
     } catch (err) {
       alert("Update failed");
